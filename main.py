@@ -7,6 +7,7 @@ from textSummerizer.pipleline.stage_02_data_validation import (
 from textSummerizer.pipleline.stage_03_data_transformation import (
     DataTransformationTraningPipeline,
 )
+from textSummerizer.pipleline.stage_04_model_trainer import ModelTrainerTrainingPipeline
 
 from textSummerizer.logging import logger
 
@@ -37,6 +38,16 @@ try:
     logger.info(f">>>> Stage {STAGE_NAME} Started <<<<<")
     data_validation = DataTransformationTraningPipeline()
     data_validation.main()
+    logger.info(f">>>> stage {STAGE_NAME} completed <<<<< \n\nx==============x")
+except Exception as e:
+    logger.exception(e)
+    raise e
+
+STAGE_NAME = "Model Training Stage"
+try:
+    logger.info(f">>>> Stage {STAGE_NAME} Started <<<<<")
+    model_trainer = ModelTrainerTrainingPipeline()
+    model_trainer.main()
     logger.info(f">>>> stage {STAGE_NAME} completed <<<<< \n\nx==============x")
 except Exception as e:
     logger.exception(e)
