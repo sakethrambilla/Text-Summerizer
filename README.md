@@ -1,6 +1,15 @@
-# End to end Text-Summarizer-Project
 
-## Workflows
+# Text Summerizer End to End Project
+
+Developed a Text Summarization project utilizing NLP techniques and Hugging Face Transformer. The API endpoint, powered by FastAPI, offers efficient text summarization. The project incorporates a robust 5-stage CI/CD pipeline through GitHub Actions, ensuring seamless integration and deployment on AWS for enhanced accessibility and scalability.
+
+
+
+## Screenshots
+
+<img src='SampleImage.png' alt='Sample Image'/>
+
+## Workflow
 
 1. Update config.yaml
 2. Update params.yaml
@@ -11,7 +20,9 @@
 7. update the main.py
 8. update the app.py
 
-# How to run?
+
+## Run Locally
+
 
 ### STEPS:
 
@@ -21,7 +32,7 @@ Clone the repository
 https://github.com/sakethrambilla/Text-Summerizer.git
 ```
 
-### STEP 01- Create a conda environment after opening the repository
+### 01- Create a virtual environment after opening the repository
 
 ```bash
 python -m venv env
@@ -31,7 +42,7 @@ python -m venv env
 .\env\Scripts\activate
 ```
 
-### STEP 02- install the requirements
+### 02- install the requirements
 
 ```bash
 pip install -r requirements.txt
@@ -42,24 +53,12 @@ pip install -r requirements.txt
 python app.py
 ```
 
-Now,
 
-```bash
-open up you local host and port
-```
+## AWS CI/CD Deployment with Github Actions
 
-```bash
-Author: Krish Naik
-Data Scientist
-Email: krishnaik06@gmail.com
+### 1. Login to AWS console.
 
-```
-
-# AWS-CICD-Deployment-with-Github-Actions
-
-## 1. Login to AWS console.
-
-## 2. Create IAM user for deployment
+### 2. Create IAM user for deployment
 
     #with specific access
 
@@ -86,13 +85,13 @@ Email: krishnaik06@gmail.com
 
     2. AmazonEC2FullAccess
 
-## 3. Create ECR repo to store/save docker image
+### 3. Create ECR repo to store/save docker image
 
     - Save the URI: 566373416292.dkr.ecr.us-east-1.amazonaws.com/text-s
 
-## 4. Create EC2 machine (Ubuntu)
+### 4. Create EC2 machine (Ubuntu)
 
-## 5. Open EC2 and Install docker in EC2 Machine:
+### 5. Open EC2 and Install docker in EC2 Machine:
 
     #optinal
 
@@ -110,11 +109,11 @@ Email: krishnaik06@gmail.com
 
     newgrp docker
 
-# 6. Configure EC2 as self-hosted runner:
+### 6. Configure EC2 as self-hosted runner:
 
     setting>actions>runner>new self hosted runner> choose os> then run command one by one
 
-# 7. Setup github secrets:
+### 7. Setup github secrets:
 
     AWS_ACCESS_KEY_ID=
 
